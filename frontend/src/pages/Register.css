@@ -1,0 +1,859 @@
+:root {
+  --sidebar-width: 20vw;
+  --sidebar-bg: #0026ff;
+  --shell-bg: #f5f7ff;
+  --card-bg: #ffffff;
+  --border-color: #e0e0e0;
+  --accent: #0026ff;
+  --accent-hover: #0039ff;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+  --transition: 0.2s ease-in-out;
+  --max-content-width: 100%;
+  --text-primary: #333;
+  --text-secondary: #666;
+}
+
+.register-shell {
+display: flex;
+  height: 100vh;
+width: 100vw;
+background: var(--shell-bg);
+box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+}
+
+/* Static Background */
+.register-shell::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, 
+    rgba(0, 38, 255, 0.05) 0%, 
+    rgba(0, 38, 255, 0.08) 25%, 
+    rgba(0, 38, 255, 0.05) 50%, 
+    rgba(0, 38, 255, 0.08) 75%, 
+    rgba(0, 38, 255, 0.05) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.register-sidebar {
+  width: 250px;
+background: var(--sidebar-bg);
+display: flex;
+flex-direction: column;
+align-items: center;
+  padding: 20px;
+gap: 1.2vw;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.register-logo {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+
+.register-sidebar img {
+  width: 80px;
+  height: 80px;
+object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.register-brand {
+font-weight: 700;
+  font-size: 24px;
+color: #fff;
+letter-spacing: 0.5px;
+  margin-top: 10px;
+}
+
+.register-nav {
+list-style: none;
+padding: 0;
+margin: 0;
+width: 100%;
+}
+
+.register-nav-item {
+  padding: 15px 18px;
+  font-size: 16px;
+font-weight: 500;
+  color: rgba(255,255,255,0.8);
+cursor: pointer;
+transition: var(--transition);
+display: flex;
+align-items: center;
+  gap: 10px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 5px;
+}
+
+.register-nav-item:hover {
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.register-nav-item.active {
+  background: rgba(255,255,255,0.2);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-left: 4px solid #ffffff;
+}
+.register-main {
+flex: 1;
+  padding: 30px;
+overflow-y: auto;
+box-sizing: border-box;
+  background: var(--shell-bg);
+}
+
+.register-container {
+  max-width: 1200px;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+  gap: 30px;
+}
+
+.register-title {
+  font-size: 28px;
+font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 20px;
+}
+
+.register-form {
+background: var(--card-bg);
+  padding: 25px;
+border-radius: var(--radius-md);
+box-shadow: var(--shadow-sm);
+display: flex;
+flex-direction: column;
+  gap: 20px;
+  border: 1px solid var(--border-color);
+}
+.register-form input.rf-input,
+.register-form select.rf-input,
+.register-form .date-input{
+  background: #ffffff !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.register-form select.rf-input {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.department-row {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-form textarea.rf-input {
+  background: #ffffff !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+.rf-row {
+display: flex;
+align-items: flex-start;
+gap: 1.2vw;
+}
+.rf-label {
+width: 30%;
+font-weight: 500;
+  color: var(--text-primary);
+font-size: 0.95vw;
+min-width: 120px;
+}
+.rf-field {
+flex: 1;
+position: relative;
+}
+.rf-input {
+width: 100%;
+padding: 0.6vw 1vw;
+font-size: 0.9vw;
+border: 1px solid var(--border-color);
+border-radius: var(--radius-sm);
+box-sizing: border-box;
+transition: var(--transition);
+}
+.rf-input:focus {
+border-color: var(--accent);
+box-shadow: 0 0 0 2px rgba(0,38,255,0.15);
+}
+.rf-input:disabled {
+background: #f0f0f0;
+cursor: not-allowed;
+}
+.register-note {
+font-size: 0.75vw;
+color: #666;
+margin-top: 0.3vw;
+}
+.register-btn {
+padding: 0.8vw 2vw;
+font-size: 1vw;
+font-weight: 600;
+color: #fff;
+background: var(--accent);
+border: none;
+  border-radius: 25px;
+cursor: pointer;
+transition: var(--transition);
+}
+
+.register-btn:hover:not(:disabled) {
+background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.register-btn:disabled {
+background: #b0b0b0;
+cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+/* New Gender Selection Design */
+.gender-selection-container {
+  display: flex;
+  gap: 1vw;
+  width: 100%;
+}
+
+.gender-option-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.gender-radio-hidden {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gender-option-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2vw 1vw;
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 80px;
+  text-align: center;
+}
+
+.gender-option-new:hover {
+  border-color: #0040ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 64, 255, 0.15);
+}
+
+.gender-option-new.selected {
+  border-color: #0040ff;
+  background: linear-gradient(135deg, #0040ff 0%, #0066ff 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 64, 255, 0.25);
+}
+
+.gender-icon {
+  font-size: 2vw;
+  margin-bottom: 0.5vw;
+  transition: transform 0.3s ease;
+}
+
+.gender-option-new:hover .gender-icon {
+  transform: scale(1.1);
+}
+
+.gender-option-new.selected .gender-icon {
+  transform: scale(1.1);
+}
+
+.gender-text {
+  font-size: 0.9vw;
+  font-weight: 600;
+  margin-bottom: 0.3vw;
+  transition: color 0.3s ease;
+}
+
+.gender-check {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  background: #4caf50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+
+.gender-option-new.selected .gender-check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gender-option-new::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.gender-option-new:hover::before {
+  left: 100%;
+}
+
+/* Modern Gender Selection Design */
+.gender-selection-modern {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2vw;
+  margin-top: 0.5vw;
+}
+
+.gender-option-card {
+  position: relative;
+}
+
+.gender-card {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  padding: 1.2vw 1.5vw;
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.gender-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 38, 255, 0.05) 0%, rgba(0, 38, 255, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gender-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 38, 255, 0.15);
+}
+
+.gender-card:hover::before {
+  opacity: 1;
+}
+
+.gender-card.selected {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+  box-shadow: 0 8px 25px rgba(0, 38, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.gender-card.selected::before {
+  opacity: 1;
+}
+
+.gender-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5vw;
+  height: 3.5vw;
+  border-radius: 12px;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.gender-card.selected .gender-card-icon {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+.gender-avatar {
+  font-size: 1.8vw;
+  font-weight: bold;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.male-avatar {
+  color: #2563eb;
+}
+
+.female-avatar {
+  color: #dc2626;
+}
+
+.gender-card.selected .gender-avatar {
+  color: white;
+  transform: scale(1.1);
+}
+
+.gender-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2vw;
+  position: relative;
+  z-index: 1;
+}
+
+.gender-card-title {
+  font-size: 1vw;
+  font-weight: 600;
+  color: #1f2937;
+  transition: color 0.3s ease;
+}
+
+.gender-card-subtitle {
+  font-size: 0.8vw;
+  color: #6b7280;
+  transition: color 0.3s ease;
+}
+
+.gender-card.selected .gender-card-title {
+  color: var(--accent);
+}
+
+.gender-card.selected .gender-card-subtitle {
+  color: #4f46e5;
+}
+
+.gender-card-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5vw;
+  height: 1.5vw;
+  position: relative;
+  z-index: 1;
+}
+
+.gender-radio-custom {
+  width: 1.2vw;
+  height: 1.2vw;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  background: white;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.gender-radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.6vw;
+  height: 0.6vw;
+  background: var(--accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease;
+}
+
+.gender-card.selected .gender-radio-custom {
+  border-color: var(--accent);
+  background: white;
+}
+
+.gender-card.selected .gender-radio-custom::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.gender-selection-modern.error {
+  border: 2px solid #e74c3c;
+  border-radius: 12px;
+  padding: 0.5vw;
+  background: rgba(231, 76, 60, 0.05);
+}
+
+/* Password Field Styles */
+.password-field {
+  position: relative;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 1vw;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2vw;
+  padding: 0.3vw;
+  color: #666;
+  transition: color 0.3s ease;
+  z-index: 2;
+}
+
+.password-toggle-btn:hover {
+  color: var(--accent);
+}
+
+.password-field .rf-input {
+  padding-right: 3.5vw;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gender-selection-modern {
+    grid-template-columns: 1fr;
+    gap: 1vw;
+  }
+  
+  .gender-card {
+    padding: 1vw 1.2vw;
+  }
+  
+  .gender-card-icon {
+    width: 3vw;
+    height: 3vw;
+  }
+  
+  .gender-avatar {
+    font-size: 1.5vw;
+  }
+  
+  .gender-card-title {
+    font-size: 0.9vw;
+  }
+  
+  .gender-card-subtitle {
+    font-size: 0.7vw;
+  }
+  
+  .password-toggle-btn {
+    font-size: 1.5vw;
+    right: 1.5vw;
+  }
+  
+  .password-field .rf-input {
+    padding-right: 4vw;
+  }
+}
+
+/* Legacy gender styles (keeping for compatibility) */
+.gender-container {
+display: flex;
+gap: 0.5vw;
+}
+.gender-group {
+display: inline-flex;
+background: #ffffff;
+border: 1px solid #c8c8c8;
+border-radius: 40px;
+overflow: hidden;
+position: relative;
+}
+.gender-input-hidden {
+position: absolute;
+opacity: 0;
+pointer-events: none;
+}
+.gender-option {
+padding: 0.45vw 1.4vw;
+font-size: 0.85vw;
+font-weight: 600;
+cursor: pointer;
+user-select: none;
+color: #222;
+transition: background 0.25s, color 0.25s;
+display: flex;
+align-items: center;
+justify-content: center;
+min-width: 6vw;
+}
+.gender-option.active {
+background: #111;
+color: #fff;
+}
+.gender-option:not(.active):hover {
+background: #ececec;
+}
+
+.register-form .gender-group { background:#ffffff !important; }
+.register-form .gender-option.active { background:#111 !important; color:#ffffff !important; }
+
+.date-field { 
+  position: relative; 
+  display: flex;
+  align-items: center;
+}
+.date-input {
+cursor: pointer;
+position: relative;
+background-repeat: no-repeat;
+background-size: 18px 18px;
+background-position: right 0.7vw center;
+padding-right: 2.4vw;
+  flex: 1;
+}
+.date-input::-webkit-calendar-picker-indicator {
+opacity: 0;
+width: 50%;
+  color: #0040ff;
+height: 100%;
+cursor: pointer;
+}
+.calendar-icon {
+  position: absolute;
+  right: 0.7vw;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2vw;
+  color: #0040ff;
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.2s ease;
+}
+.calendar-icon:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Calendar Popup Styles */
+.calendar-popup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #c8c8c8;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  margin-top: 4px;
+  padding: 12px;
+  min-width: 280px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 0 4px;
+}
+
+.calendar-header h3 {
+  margin: 0;
+  font-size: 1vw;
+  font-weight: 600;
+  color: #333;
+}
+
+.calendar-nav-btn {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: all 0.2s ease;
+}
+
+.calendar-nav-btn:hover {
+  background: #e9e9e9;
+  color: #333;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.calendar-weekday {
+  text-align: center;
+  font-size: 0.8vw;
+  font-weight: 600;
+  color: #666;
+  padding: 6px 0;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.calendar-day {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85vw;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  color: #333;
+}
+
+.calendar-day:hover {
+  background: #f0f0f0;
+}
+
+.calendar-day.today {
+  background: #e3f2fd;
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.calendar-day.selected {
+  background: #0040ff;
+  color: white;
+  font-weight: 600;
+}
+
+.calendar-day.empty {
+  cursor: default;
+  color: transparent;
+}
+
+.calendar-day.empty:hover {
+  background: transparent;
+}
+
+.appointment-date img {
+border-color: #000000 ; /* Removed invert to make it black (default SVG color) */
+}
+
+.register-feedback { font-weight:600; }
+.register-success { color:#0e7d29; }
+.register-error { color:#b40000; }
+
+/* Field Error Styling */
+.rf-input.error {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.15) !important;
+}
+
+.field-error {
+  color: #dc3545;
+  font-size: 0.8vw;
+  margin-top: 0.3vw;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.field-error::before {
+  content: "⚠";
+  font-size: 0.9vw;
+}
+
+/* Gender selection error styling */
+.gender-selection-container.error .gender-option-new {
+  border-color: #dc3545;
+}
+
+.gender-selection-container.error .gender-option-new:hover {
+  border-color: #dc3545;
+}
+
+/* Department row error styling */
+.department-row.error .rf-input {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.15) !important;
+}
+
+/* Form validation summary */
+.validation-summary {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  color: #721c24;
+}
+
+.validation-summary h4 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.validation-summary ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.validation-summary li {
+  font-size: 13px;
+  margin-bottom: 4px;
+}

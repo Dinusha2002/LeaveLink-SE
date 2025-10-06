@@ -1,0 +1,414 @@
+/* Apply Leave Form Styles */
+.apply-leave-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.apply-leave-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.apply-leave-back-btn {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 0.875rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.apply-leave-back-btn:hover {
+  background: #f1f5f9;
+}
+
+.apply-leave-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
+}
+
+.apply-leave-header p {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.apply-leave-message {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.apply-leave-message.success {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.apply-leave-message.error {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.apply-leave-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.apply-leave-section {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.apply-leave-section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.apply-leave-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.apply-leave-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.apply-leave-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.apply-leave-group input,
+.apply-leave-group select,
+.apply-leave-group textarea {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  color: #1f2937;
+}
+
+.apply-leave-group input:focus,
+.apply-leave-group select:focus,
+.apply-leave-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.apply-leave-group input.error,
+.apply-leave-group select.error,
+.apply-leave-group textarea.error {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.apply-leave-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.apply-leave-group select optgroup {
+  font-weight: 600;
+  color: #374151;
+  background: #f9fafb;
+  padding: 0.5rem 0;
+}
+
+.apply-leave-group select option {
+  padding: 0.5rem;
+  color: #1f2937;
+  background: #ffffff;
+}
+
+/* Digital Signature Styles */
+.signature-container {
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.signature-container.error {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.signature-canvas {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  cursor: crosshair;
+  background: #ffffff;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.signature-canvas:hover {
+  border-color: #3b82f6;
+}
+
+.signature-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.signature-clear-btn {
+  background: #ef4444;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.signature-clear-btn:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+.signature-hint {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Responsive signature */
+@media (max-width: 768px) {
+  .signature-canvas {
+    width: 100%;
+    height: 120px;
+  }
+  
+  .signature-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+  
+  .signature-clear-btn {
+    width: 100%;
+  }
+}
+
+.apply-leave-group input[type="date"] {
+  cursor: pointer;
+}
+
+.apply-leave-group input::placeholder,
+.apply-leave-group textarea::placeholder {
+  color: #6b7280;
+}
+
+/* Read-only field styles */
+.read-only-field {
+  background-color: #f9fafb !important;
+  color: #6b7280 !important;
+  cursor: not-allowed !important;
+  border-color: #e5e7eb !important;
+}
+
+.read-only-field:hover {
+  border-color: #e5e7eb !important;
+  box-shadow: none !important;
+}
+
+.read-only-field:focus {
+  outline: none !important;
+  border-color: #e5e7eb !important;
+  box-shadow: none !important;
+}
+
+.field-note {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-style: italic;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Special Leave Form Styles */
+.special-leave-form {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 2px solid #3b82f6;
+}
+
+.special-leave-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #3b82f6;
+}
+
+.special-leave-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin: 0 0 0.5rem 0;
+}
+
+.special-leave-header p {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+}
+
+.apply-leave-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.error-text {
+  font-size: 0.75rem;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.apply-leave-summary {
+  background: #eff6ff;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #bfdbfe;
+  margin-top: 1rem;
+}
+
+.apply-leave-summary p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #1e40af;
+}
+
+.warning-text {
+  color: #dc2626 !important;
+  font-weight: 500;
+}
+
+.apply-leave-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.apply-leave-cancel-btn {
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.apply-leave-cancel-btn:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.apply-leave-cancel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.apply-leave-submit-btn {
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.apply-leave-submit-btn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.apply-leave-submit-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .apply-leave-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .apply-leave-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .apply-leave-actions {
+    flex-direction: column;
+  }
+  
+  .apply-leave-cancel-btn,
+  .apply-leave-submit-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .apply-leave-container {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .apply-leave-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .apply-leave-section {
+    padding: 1rem;
+  }
+}
